@@ -4,5 +4,6 @@ var input = require('fs').readFileSync(require('path').join(__dirname, 'sample.t
 describe('Module', function(){
   it('should convert input into an object', function(){
     var result = new Reader(input);
+    console.log(result.data.Properties);
   });
 });
