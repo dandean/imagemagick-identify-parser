@@ -1,0 +1,87 @@
+Image: cats.png
+  Format: PNG (Portable Network Graphics)
+  Class: DirectClass
+  Geometry: 480x360+0+0
+  Resolution: 28.35x28.35
+  Print size: 16.9312x12.6984
+  Units: PixelsPerCentimeter
+  Type: TrueColorMatte
+  Endianess: Undefined
+  Colorspace: RGB
+  Depth: 8-bit
+  Channel depth:
+    red: 8-bit
+    green: 8-bit
+    blue: 8-bit
+    alpha: 1-bit
+  Channel statistics:
+    Red:
+      min: 1 (0.00392157)
+      max: 255 (1)
+      mean: 128.551 (0.504123)
+      standard deviation: 60.4782 (0.237169)
+      kurtosis: -0.0613575
+      skewness: -0.349529
+    Green:
+      min: 1 (0.00392157)
+      max: 255 (1)
+      mean: 101.992 (0.39997)
+      standard deviation: 57.6032 (0.225895)
+      kurtosis: 0.440533
+      skewness: 0.411904
+    Blue:
+      min: 0 (0)
+      max: 255 (1)
+      mean: 78.188 (0.306619)
+      standard deviation: 56.7017 (0.22236)
+      kurtosis: 1.54315
+      skewness: 1.12865
+    Alpha:
+      min: 255 (1)
+      max: 255 (1)
+      mean: 255 (1)
+      standard deviation: 0 (0)
+      kurtosis: 0
+      skewness: 0
+  Image statistics:
+    Overall:
+      min: 0 (0)
+      max: 255 (1)
+      mean: 77.1829 (0.302678)
+      standard deviation: 50.4748 (0.19794)
+      kurtosis: 5.85562
+      skewness: 1.39683
+  Rendering intent: Undefined
+  Interlace: None
+  Background color: white
+  Border color: rgba(223,223,223,1)
+  Matte color: grey74
+  Transparent color: none
+  Compose: Over
+  Page geometry: 480x360+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: Zip
+  Orientation: Undefined
+  Properties:
+    date:create: 2011-11-27T17:07:58-08:00
+    date:modify: 2011-11-27T16:26:49-08:00
+    PNG:iCCP                 : chunk was found
+    PNG:IHDR.bit_depth       : 8
+    PNG:IHDR.color_type      : 6
+    PNG:IHDR.interlace_method: 0
+    PNG:IHDR.width,height    : 480, 360
+    PNG:pHYs                 : x_res=2835, y_res=2835, units=1
+    signature: 4950bdffcaf3769debf335f1b725b3d4a470ad59b8408442bbdd240a909b8a90
+  Profiles:
+    Profile-icc: 6120 bytes
+      Display
+  Artifacts:
+    verbose: true
+  Tainted: False
+  Filesize: 182KBB
+  Number pixels: 173KB
+  Pixels per second: 8.64MB
+  User time: 0.010u
+  Elapsed time: 0:01.019
+  Version: ImageMagick 6.7.1-1 2011-11-27 Q16 http://www.imagemagick.org
