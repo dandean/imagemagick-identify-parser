@@ -1,26 +1,37 @@
 
 function ImageMagickIdentifyReader(text) {
+  if (this instanceof ImageMagickIdentifyReader === false) {
+    // If called as a function, return an instanciated object.
+    return new ImageMagickIdentifyReader(text);
+  }
+
   if (Object.prototype.toString.call(text) !== '[object String]') {
     throw new Error('Invalid argument `text`: must be a String.');
   }
-  
-  this.raw = text;
+
+  this.raw = text; // Store raw input in case it's wanted later.
   this.data = {};
-  
+
   var input = text.trim();
-  
+
+  // If input is empty, no need to bother parsing it.
   if (input === '') return;
-  
+
+  // Each new line should start with *at least* two spaces. This fixes 1st line.
   input = ('  ' + input).split("\n");
-  
+
   var stack = [this.data];
   var lastDepth = 1;
   var lastKey;
-  
+
   var t = this;
 
   input.forEach(function(line, i) {
     var index = line.indexOf(':');
+
+    // The line *must* contain a colon to be processed. This currently skips the
+    // second line of the "Profiles" property. In the sample output, this line
+    // contains simply "Display".
     if (index > -1) {
       var depth = line.match(/^ +/)[0].length / 2;
       var key = line.slice(0, index).trim();
