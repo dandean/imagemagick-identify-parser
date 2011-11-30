@@ -82,4 +82,13 @@ function ImageMagickIdentifyReader(text) {
   });
 }
 
+/**
+ * ImageMagickIdentifyReader#toJSON() -> Object
+ *
+ * Return an object ready for JSON stringification.
+**/
+ImageMagickIdentifyReader.prototype.toJSON = function() {
+  return this.data;
+};
+
 module.exports = ImageMagickIdentifyReader;
