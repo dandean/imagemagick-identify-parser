@@ -1,3 +1,18 @@
+/**
+ * class ImageMagickIdentifyReader(text)
+ * - text (String): Output text from the `identify` program.
+ *
+ * When called as a constructor with the `new` operator, a new instance is
+ * is returned.
+**/
+
+/**
+ * ImageMagickIdentifyReader(text) -> ImageMagickIdentifyReader
+ * - text (String): Output text from the `identify` program.
+ *
+ * When called as a function *without* the `new` operator, a new instance is
+ * is returned.
+**/
 
 function ImageMagickIdentifyReader(text) {
   if (this instanceof ImageMagickIdentifyReader === false) {
