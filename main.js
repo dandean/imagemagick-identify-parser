@@ -59,7 +59,16 @@ function ImageMagickIdentifyReader(text) {
       var depth = line.match(/^ +/)[0].length / 2;
       var key = line.slice(0, index).trim();
       var value = line.slice(index + 1).trim() || {};
+      
+      if (isString(value)) {
+        if (value.match(/^\-?\d+$/)) {
+          value = parseInt(value, 10);
 
+        } else if (value.match(/^\-?\d+?\.\d+$/)) {
+          value = parseFloat(value, 10);
+        }
+      }
+      
       if (depth === lastDepth) {
         // Add the key/value pair to the last object in the stack
         stack[stack.length-1][key] = value;
