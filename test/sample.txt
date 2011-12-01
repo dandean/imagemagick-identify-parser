@@ -34,14 +34,14 @@ Image: cats.png
       max: 255 (1)
       mean: 78.188 (0.306619)
       standard deviation: 56.7017 (0.22236)
-      kurtosis: 1.54315
+      kurtosis: -1.54315
       skewness: 1.12865
     Alpha:
       min: 255 (1)
       max: 255 (1)
       mean: 255 (1)
       standard deviation: 0 (0)
-      kurtosis: 0
+      kurtosis: -200
       skewness: 0
   Image statistics:
     Overall:
