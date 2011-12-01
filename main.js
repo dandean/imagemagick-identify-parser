@@ -60,14 +60,14 @@ function ImageMagickIdentifyReader(text, camelCase) {
       var depth = line.match(/^ +/)[0].length / 2;
       var key = line.slice(0, index).trim();
       var value = line.slice(index + 1).trim() || {};
-      
+
       if (camelCase) {
         // Replace all non-word and underscore characters with a non-sequential space.
         key = key.replace(/[\W_]/g, ' ').replace(/\s+/g, ' ').toLowerCase();
         // Replace initial char in each work with an uppercase version.
         key = key.replace(/ \w/g, function(x) { return x.trim().toUpperCase(); });
       }
-      
+
       if (isString(value)) {
         if (value.match(/^\-?\d+$/)) {
           value = parseInt(value, 10);
@@ -76,7 +76,15 @@ function ImageMagickIdentifyReader(text, camelCase) {
           value = parseFloat(value, 10);
         }
       }
-      
+
+      if (depth === 1 && key.match(/^Geometry$/i) && value.match(/^\d+x\d+\+\d+\+\d+$/)) {
+        // Extract width and height from geometry property if present and value
+        // is in format "INTxINT+INT+INT"
+        var parts = value.split('x');
+        data.width = parseInt(parts[0], 10);
+        data.height = parseInt(parts[1], 10);
+      }
+
       if (depth === lastDepth) {
         // Add the key/value pair to the last object in the stack
         stack[stack.length-1][key] = value;
