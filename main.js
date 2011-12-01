@@ -97,6 +97,8 @@ function ImageMagickIdentifyReader(text) {
 
     }
   });
+
+  return data;
 }
 
 function isString(value) {
