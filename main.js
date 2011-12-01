@@ -40,6 +40,22 @@ function ImageMagickIdentifyReader(text) {
     // second line of the "Profiles" property. In the sample output, this line
     // contains simply "Display".
     if (index > -1) {
+
+      var nextCharacter = line[index+1];
+
+      // nextCharacter is undefined when ':' is the last char on the line.
+      if (nextCharacter && nextCharacter.match(/\w/)) {
+
+        // Start counting from the first ':'.
+        for (var j=index+1; j<line.length; j++) {
+          if (line[j] === ':') {
+            // A new separator was found, use it's index to split the line on.
+            index = j;
+            break;
+          }
+        }
+      }
+
       var depth = line.match(/^ +/)[0].length / 2;
       var key = line.slice(0, index).trim();
       var value = line.slice(index + 1).trim() || {};
