@@ -1,12 +1,4 @@
 /**
- * class ImageMagickIdentifyReader(text)
- * - text (String): Output text from the `identify` program.
- *
- * When called as a constructor with the `new` operator, a new instance is
- * is returned.
-**/
-
-/**
  * ImageMagickIdentifyReader(text) -> ImageMagickIdentifyReader
  * - text (String): Output text from the `identify` program.
  *
@@ -15,17 +7,17 @@
 **/
 
 function ImageMagickIdentifyReader(text) {
-  if (this instanceof ImageMagickIdentifyReader === false) {
-    // If called as a function, return an instanciated object.
-    return new ImageMagickIdentifyReader(text);
+  if (this instanceof ImageMagickIdentifyReader) {
+    throw new Error('Invalid use - this module is to be called, not instantiated.');
   }
 
-  if (Object.prototype.toString.call(text) !== '[object String]') {
+  if (!isString(text)) {
     throw new Error('Invalid argument `text`: must be a String.');
   }
 
-  this.raw = text; // Store raw input in case it's wanted later.
-  this.data = {};
+  var data = {
+    rawInput: text
+  };
 
   var input = text.trim();
 
@@ -35,7 +27,7 @@ function ImageMagickIdentifyReader(text) {
   // Each new line should start with *at least* two spaces. This fixes 1st line.
   input = ('  ' + input).split("\n");
 
-  var stack = [this.data];
+  var stack = [data];
   var lastDepth = 1;
   var lastKey;
 
@@ -82,13 +74,8 @@ function ImageMagickIdentifyReader(text) {
   });
 }
 
-/**
- * ImageMagickIdentifyReader#toJSON() -> Object
- *
- * Return an object ready for JSON stringification.
-**/
-ImageMagickIdentifyReader.prototype.toJSON = function() {
-  return this.data;
-};
+function isString(value) {
+  return Object.prototype.toString.call(value) === '[object String]';
+}
 
 module.exports = ImageMagickIdentifyReader;
