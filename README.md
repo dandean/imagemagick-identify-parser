@@ -10,7 +10,7 @@ Example
 var im = require('imagemagick');
 var imParse = require('imagemagick-identify-parser');
 
-im.identify(['-verbose', '/path/to/image.png], function(e, result) {
+im.identify(['-verbose', '/path/to/image.png'], function(e, result) {
 
   var data = imParse(result, true);
 
