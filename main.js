@@ -1,12 +1,13 @@
 /**
- * ImageMagickIdentifyReader(text) -> ImageMagickIdentifyReader
+ * ImageMagickIdentifyReader(text[, camelCase = false]) -> ImageMagickIdentifyReader
  * - text (String): Output text from the `identify` program.
+ * - camelCase (Boolean): Optional. If property names should be converted to
+ *   camelCase. Defaults to `false`.
  *
- * When called as a function *without* the `new` operator, a new instance is
- * is returned.
+ * Returns a parsed object representation of the input string.
 **/
 
-function ImageMagickIdentifyReader(text) {
+function ImageMagickIdentifyReader(text, camelCase) {
   if (this instanceof ImageMagickIdentifyReader) {
     throw new Error('Invalid use - this module is to be called, not instantiated.');
   }
@@ -59,6 +60,13 @@ function ImageMagickIdentifyReader(text) {
       var depth = line.match(/^ +/)[0].length / 2;
       var key = line.slice(0, index).trim();
       var value = line.slice(index + 1).trim() || {};
+      
+      if (camelCase) {
+        // Replace all non-word and underscore characters with a non-sequential space.
+        key = key.replace(/[\W_]/g, ' ').replace(/\s+/g, ' ').toLowerCase();
+        // Replace initial char in each work with an uppercase version.
+        key = key.replace(/ \w/g, function(x) { return x.trim().toUpperCase(); });
+      }
       
       if (isString(value)) {
         if (value.match(/^\-?\d+$/)) {
