@@ -70,10 +70,24 @@ function ImageMagickIdentifyReader(text, camelCase) {
 
       if (isString(value)) {
         if (value.match(/^\-?\d+$/)) {
+          // Convert int-looking values to actual numbers.
           value = parseInt(value, 10);
 
         } else if (value.match(/^\-?\d+?\.\d+$/)) {
+          // Convert float-looking values to actual numbers.
           value = parseFloat(value, 10);
+
+        } else if (value.match(/^true$/i)) {
+          // Convert boolean TRUE looking values to `true`.
+          value = true;
+
+        } else if (value.match(/^false$/i)) {
+          // Convert boolean FALSE looking values to `false`.
+          value = false;
+
+        } else if (value.match(/^undefined$/i)) {
+          // Convert boolean FALSE looking values to `false`.
+          return;
         }
       }
 
