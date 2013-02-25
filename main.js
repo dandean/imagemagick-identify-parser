@@ -4,6 +4,8 @@
  * - options (Object): Optional options hash:
  *   - camelCase (Boolean): Optional. If property names should be converted to
  *     camelCase. Defaults to `false`.
+ *   - lowerCase (Boolean): Optional. If property names should be converted to
+ *     lower case. Defaults to `false`.
  *   - Backwards compatibility: If `options` is not an Object and `false`(-ish),
  *     we assume `camelCase` is meant (to remain compatible).
  *
@@ -17,12 +19,14 @@ function ImageMagickIdentifyReader(text, options) {
 
   if (options instanceof Object) {
     options = {
-      camelCase: options.camelCase || false
+      camelCase: options.camelCase || false,
+      lowerCase: options.lowerCase || false
     };
   } else {
     // Backwards compatibility: Set camelCase if `options` is not an Object.
     options = {
-      camelCase: !!options
+      camelCase: !!options,
+      lowerCase: false
     };
   }
 
@@ -80,6 +84,10 @@ function ImageMagickIdentifyReader(text, options) {
         key = key.replace(/[\W_]/g, ' ').replace(/\s+/g, ' ').toLowerCase();
         // Replace initial char in each work with an uppercase version.
         key = key.replace(/ \w/g, function(x) { return x.trim().toUpperCase(); });
+      }
+
+      if (options.lowerCase) {
+        key = key.toLowerCase();
       }
 
       if (isString(value)) {
