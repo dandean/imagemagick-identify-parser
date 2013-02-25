@@ -33,8 +33,14 @@ describe('Module', function(){
 
   it('should convert property names to camelCase when specified', function() {
     assert.ok(Object.keys(result).indexOf('Image statistics') > -1);
-    result = reader(input, true);
-    assert.ok(Object.keys(result).indexOf('imageStatistics') > -1);
+    var result2 = reader(input, true);
+    assert.ok(Object.keys(result2).indexOf('imageStatistics') > -1);
+  });
+
+  it('should convert property names to lower case when specified', function() {
+    assert.ok(Object.keys(result).indexOf('Image statistics') > -1);
+    var result2 = reader(input, {lowerCase: true});
+    assert.ok(Object.keys(result2).indexOf('image statistics') > -1);
   });
 
   it('should extract `width` and `height` properties from `geometry` property', function() {
