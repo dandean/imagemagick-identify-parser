@@ -1,15 +1,29 @@
 /**
- * ImageMagickIdentifyReader(text[, camelCase = false]) -> ImageMagickIdentifyReader
+ * ImageMagickIdentifyReader(text[, options]) -> ImageMagickIdentifyReader
  * - text (String): Output text from the `identify` program.
- * - camelCase (Boolean): Optional. If property names should be converted to
- *   camelCase. Defaults to `false`.
+ * - options (Object): Optional options hash:
+ *   - camelCase (Boolean): Optional. If property names should be converted to
+ *     camelCase. Defaults to `false`.
+ *   - Backwards compatibility: If `options` is not an Object and `false`(-ish),
+ *     we assume `camelCase` is meant (to remain compatible).
  *
  * Returns a parsed object representation of the input string.
 **/
 
-function ImageMagickIdentifyReader(text, camelCase) {
+function ImageMagickIdentifyReader(text, options) {
   if (this instanceof ImageMagickIdentifyReader) {
     throw new Error('Invalid use - this module is to be called, not instantiated.');
+  }
+
+  if (options instanceof Object) {
+    options = {
+      camelCase: options.camelCase || false
+    };
+  } else {
+    // Backwards compatibility: Set camelCase if `options` is not an Object.
+    options = {
+      camelCase: !!options
+    };
   }
 
   if (!isString(text)) {
@@ -61,7 +75,7 @@ function ImageMagickIdentifyReader(text, camelCase) {
       var key = line.slice(0, index).trim();
       var value = line.slice(index + 1).trim() || {};
 
-      if (camelCase) {
+      if (options.camelCase) {
         // Replace all non-word and underscore characters with a non-sequential space.
         key = key.replace(/[\W_]/g, ' ').replace(/\s+/g, ' ').toLowerCase();
         // Replace initial char in each work with an uppercase version.
