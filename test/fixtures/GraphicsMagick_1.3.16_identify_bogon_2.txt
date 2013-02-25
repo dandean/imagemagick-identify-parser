@@ -1,0 +1,83 @@
+Image: /home/fs/Pictures/Bob-Dylan-nickdrake-08.jpg
+  Format: JPEG (Joint Photographic Experts Group JFIF format)
+  Geometry: 601x800
+  Class: DirectClass
+  Type: true color
+  Depth: 8 bits-per-pixel component
+  Channel Depths:
+    Red:      8 bits
+    Green:    8 bits
+    Blue:     8 bits
+  Channel Statistics:
+    Red:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   238.00 (0.9333)
+      Mean:                       85.77 (0.3364)
+      Standard Deviation:         78.48 (0.3078)
+    Green:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   228.00 (0.8941)
+      Mean:                       82.11 (0.3220)
+      Standard Deviation:         74.66 (0.2928)
+    Blue:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   227.00 (0.8902)
+      Mean:                       82.40 (0.3231)
+      Standard Deviation:         74.84 (0.2935)
+  Filesize: 170.0K
+  Interlace: No
+  Orientation: Unknown
+  Background Color: white
+  Border Color: #DFDFDF
+  Matte Color: #BDBDBD
+  Compose: Over
+  Dispose: Undefined
+  Iterations: 0
+  Compression: JPEG
+  JPEG-Quality: 99
+  JPEG-Colorspace: 2
+  JPEG-Colorspace-Name: RGB
+  JPEG-Sampling-factors: 1x1,1x1,1x1
+  Signature: 7b7e0ae82f7f20a944252cbaf8d5c95d2c77110f0c0c695e11544fed8ee5d1e9
+  Profile-color: 3144 bytes
+  Profile-iptc: 10354 bytes
+    City:
+  0x00000000: 254700                                        -%
+    unknown:
+  
+    Keyword:
+  Bob Dylan
+    Created Date:
+  20101203
+    Created Time:
+  141250
+    unknown:
+  20101203
+    unknown:
+  141250
+    unknown:
+  0x00000000: 33692cff ff4f2dff 5e322172 ff22ffff ffffff5e  -3i,--O--^2!r-"-----
+  0x00000014: ffffffff ffff7b1b ffff1552 ffff3cff ff6236ff  ^------{----R--<--b6
+  0x00000028: 6c52ff2d 3cff24ff ff7bffff ffffff0b 4d277a7f  -lR--<-$--{------M'z
+  0x0000003c: ffff35ff ff22ff34 6033ff3c ff57ff6b ff682aff  ---5--"-4`3-<-W-k-h*
+  0x00000050: 69ff7a5c ffffff06 62ff140e ffff15ff ff2dff5d  -i-z\----b----------
+  0x00000064: ffff4eff 481f7629 5a5510ff 625effff 2affff47  ]--N-H-v)ZU--b^--*-
+  0x00000078: 47407901 41ff04ff ffffffff ff19ffff ff00      -G@y-A---
+  Profile-EXIF: 10553 bytes
+    Make: Canon
+    X Resolution: 300/1
+    Y Resolution: 300/1
+    Resolution Unit: 2
+    Software: Adobe Photoshop Lightroom 3.4.1
+    Date Time: 2011:09:23 10:45:34
+    Exif Offset: 172
+    Exif Version: 0230
+    Date Time Original: 2010:12:03 14:12:50
+    Date Time Digitized: 2010:12:03 14:12:50
+    Max Aperture Value: 0/1
+    Custom Rendered: 1
+  Profile-APP1: 7903 bytes
+  Tainted: False
+  User Time: 0.020u
+  Elapsed Time: 0:01
+  Pixels Per Second: 22.9M

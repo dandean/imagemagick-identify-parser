@@ -1,0 +1,69 @@
+Image: /home/fs/Pictures/soom-t1.jpg
+  Format: JPEG (Joint Photographic Experts Group JFIF format)
+  Geometry: 536x468
+  Class: DirectClass
+  Type: true color
+  Depth: 8 bits-per-pixel component
+  Channel Depths:
+    Red:      8 bits
+    Green:    8 bits
+    Blue:     8 bits
+  Channel Statistics:
+    Red:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   255.00 (1.0000)
+      Mean:                       30.93 (0.1213)
+      Standard Deviation:         55.50 (0.2177)
+    Green:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   255.00 (1.0000)
+      Mean:                       39.04 (0.1531)
+      Standard Deviation:         60.53 (0.2374)
+    Blue:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   255.00 (1.0000)
+      Mean:                       68.78 (0.2697)
+      Standard Deviation:         88.54 (0.3472)
+  Filesize: 217.5K
+  Interlace: No
+  Orientation: TopLeft
+  Background Color: white
+  Border Color: #DFDFDF
+  Matte Color: #BDBDBD
+  Compose: Over
+  Dispose: Undefined
+  Iterations: 0
+  Compression: JPEG
+  JPEG-Quality: 99
+  JPEG-Colorspace: 2
+  JPEG-Colorspace-Name: RGB
+  JPEG-Sampling-factors: 1x1,1x1,1x1
+  Signature: 1e195851a5f51f76ca7841ffe1f67abe7a03b8b11e71f4728f9a436ecf9ae8e0
+  Profile-color: 3144 bytes
+  Profile-iptc: 8348 bytes
+    City:
+  0x00000000: 254700                                        -%
+    unknown:
+  
+    unknown:
+  *&ÿ
+  Profile-EXIF: 6551 bytes
+    Image Width: 3796
+    Image Length: 3312
+    Bits Per Sample: 8
+    Photometric Interpretation: 2
+    Orientation: 1
+    Samples Per Pixel: 3
+    X Resolution: 3000000/10000
+    Y Resolution: 3000000/10000
+    Resolution Unit: 2
+    Software: Adobe Photoshop CS5 Windows
+    Date Time: 2012:05:28 16:12:46
+    Exif Offset: 228
+    Exif Version: 0221
+    Color Space: 1
+    Exif Image Width: 536
+    Exif Image Length: 468
+  Profile-APP1: 4153 bytes
+  Tainted: False
+  User Time: 0.010u
