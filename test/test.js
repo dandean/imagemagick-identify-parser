@@ -1,5 +1,5 @@
 var reader = require('../main');
-var input = require('fs').readFileSync(require('path').join(__dirname, 'sample.txt'), 'utf8');
+var input = require('fs').readFileSync(require('path').join(__dirname, 'fixtures/sample.txt'), 'utf8');
 var assert = require('assert');
 
 var result = reader(input);
