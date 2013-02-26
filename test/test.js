@@ -33,13 +33,17 @@ describe('Module', function(){
 
   it('should convert property names to camelCase when specified', function() {
     assert.ok(Object.keys(result).indexOf('Image statistics') > -1);
+
     var result2 = reader(input, true);
     assert.ok(Object.keys(result2).indexOf('imageStatistics') > -1);
+
+    var result3 = reader(input, "camel");
+    assert.ok(Object.keys(result3).indexOf('imageStatistics') > -1);
   });
 
   it('should convert property names to lower case when specified', function() {
     assert.ok(Object.keys(result).indexOf('Image statistics') > -1);
-    var result2 = reader(input, {lowerCase: true});
+    var result2 = reader(input, "lower");
     assert.ok(Object.keys(result2).indexOf('image statistics') > -1);
   });
 
