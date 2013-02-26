@@ -1,33 +1,28 @@
 /**
- * ImageMagickIdentifyReader(text[, options]) -> ImageMagickIdentifyReader
+ * ImageMagickIdentifyReader(text[, transform]) -> ImageMagickIdentifyReader
  * - text (String): Output text from the `identify` program.
- * - options (Object): Optional options hash:
- *   - camelCase (Boolean): Optional. If property names should be converted to
- *     camelCase. Defaults to `false`.
- *   - lowerCase (Boolean): Optional. If property names should be converted to
- *     lower case. Defaults to `false`.
- *   - Backwards compatibility: If `options` is not an Object and `false`(-ish),
- *     we assume `camelCase` is meant (to remain compatible).
+ * - transform (String): Optional key transformation: "camel" | "lower"
  *
  * Returns a parsed object representation of the input string.
+ *
+ * The optional `transform` argument can instruct this module to transform keys
+ * into different formats: "camel" converts keys to camelCase and "lower" to
+ * lower case. For backwards compatibility, the Boolean value `true` will be
+ * treated as "camel".
 **/
 
-function ImageMagickIdentifyReader(text, options) {
+function ImageMagickIdentifyReader(text, transform) {
   if (this instanceof ImageMagickIdentifyReader) {
     throw new Error('Invalid use - this module is to be called, not instantiated.');
   }
 
-  if (options instanceof Object) {
-    options = {
-      camelCase: options.camelCase || false,
-      lowerCase: options.lowerCase || false
-    };
-  } else {
-    // Backwards compatibility: Set camelCase if `options` is not an Object.
-    options = {
-      camelCase: !!options,
-      lowerCase: false
-    };
+  if (typeof transform === "string") {
+    if (transform !== "lower" && transform !== "camel") {
+      throw new Error('Invalid argument `transform`: must be either `camel` or `lower`.');
+    }
+  } else if (!!transform) {
+    // Backwards compatibility: Set camelCase if `transform` is true(ish) but not a String.
+    transform = "camel";
   }
 
   if (!isString(text)) {
@@ -79,14 +74,14 @@ function ImageMagickIdentifyReader(text, options) {
       var key = line.slice(0, index).trim();
       var value = line.slice(index + 1).trim() || {};
 
-      if (options.camelCase) {
+      if (transform === "camel") {
         // Replace all non-word and underscore characters with a non-sequential space.
         key = key.replace(/[\W_]/g, ' ').replace(/\s+/g, ' ').toLowerCase();
         // Replace initial char in each work with an uppercase version.
         key = key.replace(/ \w/g, function(x) { return x.trim().toUpperCase(); });
       }
 
-      if (options.lowerCase) {
+      if (transform === "lower") {
         key = key.toLowerCase();
       }
 
