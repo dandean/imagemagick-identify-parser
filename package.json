@@ -2,7 +2,7 @@
   "author": "Dan Dean <@dandean> (http://dandean.com)",
   "name": "imagemagick-identify-parser",
   "description": "Parses output from the `identify` program into an object.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/dandean/imagemagick-identify-parser",
   "repository": {
     "type": "git",
