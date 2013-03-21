@@ -95,4 +95,20 @@ describe('Module', function(){
     // TODO: Does not work yet
     // assert.strictEqual(id['Profile-EXIF']['Date Time Digitized'], '2010:12:03 14:12:50');
   });
+
+  it('should return sensible info for ImageMagick_6.7.2-7 input data', function() {
+    var identify_data = fs.readFileSync(__dirname + "/fixtures/ImageMagick_6.7.2-7_identify_ok.txt").toString();
+    var id = reader(identify_data);
+    // console.log(id);
+
+    assert(id);
+    assert.notDeepEqual(id, {}, "Output must not be empty");
+
+    assert.strictEqual(id.Geometry, '500x379+0+0');
+    assert.strictEqual(id.Format, 'GIF (CompuServe graphics interchange format)');
+    assert.strictEqual(id.Depth, '8-bit');
+
+    assert.strictEqual(id.Type, 'Palette');
+    assert.strictEqual(id['Channel statistics'].Green.kurtosis, 2.63942);
+  });
 });
