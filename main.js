@@ -32,6 +32,9 @@ function ImageMagickIdentifyReader(text, camelCase) {
   var lastDepth = 1;
   var lastKey;
 
+  var inHistogram = false;
+  var histogramDepth;
+
   var t = this;
 
   input.forEach(function(line, i) {
@@ -97,6 +100,22 @@ function ImageMagickIdentifyReader(text, camelCase) {
         var parts = value.split('x');
         data.width = parseInt(parts[0], 10);
         data.height = parseInt(parts[1], 10);
+      }
+
+      // Histogram and Colormap need special treatment since
+      // their value tables are not left-aligned.
+      if (key.match(/^Histogram$/i) || key.match(/^Colormap$/i)) {
+        inHistogram = true;
+        histogramDepth = depth;
+        return;
+      }
+      // Very long histogram counts might trigger the first test.
+      // 2nd check: Does key look like a word rather than a number?
+      if (depth === histogramDepth && key.match(/^\D+$/)) {
+        inHistogram = false;
+      }
+      if (inHistogram === true) {
+        return;
       }
 
       if (depth === lastDepth) {
