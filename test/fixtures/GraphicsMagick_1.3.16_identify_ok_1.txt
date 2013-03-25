@@ -1,0 +1,43 @@
+Image: /home/fs/Pictures/Flo_Pro7_Ausweis.jpg
+  Format: JPEG (Joint Photographic Experts Group JFIF format)
+  Geometry: 187x251
+  Class: DirectClass
+  Type: true color
+  Depth: 8 bits-per-pixel component
+  Channel Depths:
+    Red:      8 bits
+    Green:    8 bits
+    Blue:     8 bits
+  Channel Statistics:
+    Red:
+      Minimum:                     3.00 (0.0118)
+      Maximum:                   255.00 (1.0000)
+      Mean:                      107.18 (0.4203)
+      Standard Deviation:         63.62 (0.2495)
+    Green:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   247.00 (0.9686)
+      Mean:                       86.41 (0.3389)
+      Standard Deviation:         52.41 (0.2055)
+    Blue:
+      Minimum:                     0.00 (0.0000)
+      Maximum:                   250.00 (0.9804)
+      Mean:                       80.00 (0.3137)
+      Standard Deviation:         52.42 (0.2056)
+  Resolution: 96x96 pixels/inch
+  Filesize: 7.4K
+  Interlace: No
+  Orientation: Unknown
+  Background Color: white
+  Border Color: #DFDFDF
+  Matte Color: #BDBDBD
+  Compose: Over
+  Dispose: Undefined
+  Iterations: 0
+  Compression: JPEG
+  JPEG-Quality: 75
+  JPEG-Colorspace: 2
+  JPEG-Colorspace-Name: RGB
+  JPEG-Sampling-factors: 2x2,1x1,1x1
+  Signature: ad9515cf47e1d0fb50461399c881baa91a1e7ff9b5f95b77d9b6d6c4c145a4bf
+  Tainted: False
