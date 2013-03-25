@@ -111,4 +111,20 @@ describe('Module', function(){
     assert.strictEqual(id.Type, 'Palette');
     assert.strictEqual(id['Channel statistics'].Green.kurtosis, 2.63942);
   });
+
+  it('should return sensible info for slightly bogon ImageMagick_6.7.2-7 input data 1', function() {
+    var identify_data = fs.readFileSync(__dirname + "/fixtures/ImageMagick_6.7.2-7_identify_bogon1.txt").toString();
+    var id = reader(identify_data);
+    // console.log(id);
+
+    assert(id);
+    assert.notDeepEqual(id, {}, "Output must not be empty");
+
+    assert.strictEqual(id.Geometry, '500x379+0+0');
+    assert.strictEqual(id.Format, 'JPEG (Joint Photographic Experts Group JFIF format)');
+    assert.strictEqual(id.Depth, '8-bit');
+
+    assert.strictEqual(id.Type, 'TrueColor');
+    assert.strictEqual(id['Channel statistics'].Green.kurtosis, 2.64613);
+  });
 });
